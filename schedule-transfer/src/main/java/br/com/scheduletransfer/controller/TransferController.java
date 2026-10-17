@@ -1,6 +1,5 @@
 package br.com.scheduletransfer.controller;
 
-import br.com.scheduletransfer.domain.Transfer;
 import br.com.scheduletransfer.dto.CreateTransferRequest;
 import br.com.scheduletransfer.dto.TransferResponse;
 import br.com.scheduletransfer.service.TransferService;

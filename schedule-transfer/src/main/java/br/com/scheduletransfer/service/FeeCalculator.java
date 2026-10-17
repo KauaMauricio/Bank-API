@@ -6,12 +6,6 @@ import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-/**
- * Tabela provisória de exemplo:
- * D+0: 2,5% do valor; D+1 a D+10: R$ 12,00; D+11 a 20: 8,2%;
- * D+21 a 30: 6,9%; D+31 a 40: 4,7%; D+41 a 50: 1,7%.
- * A taxa é adicional ao valor transferido.
- */
 @Component
 public class FeeCalculator {
     private static final BigDecimal ZERO = new BigDecimal("0.00");

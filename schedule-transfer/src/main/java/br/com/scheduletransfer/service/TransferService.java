@@ -1,5 +1,6 @@
 package br.com.scheduletransfer.service;
 
+import br.com.scheduletransfer.ResourceNotFoundException;
 import br.com.scheduletransfer.domain.Transfer;
 import br.com.scheduletransfer.dto.CreateTransferRequest;
 import br.com.scheduletransfer.repository.TransferRepository;
