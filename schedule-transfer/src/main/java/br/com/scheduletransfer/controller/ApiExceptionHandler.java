@@ -1,6 +1,6 @@
 package br.com.scheduletransfer.controller;
 
-import br.com.scheduletransfer.service.ResourceNotFoundException;
+import br.com.scheduletransfer.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;

@@ -1,4 +1,4 @@
-package br.com.scheduletransfer.service;
+package br.com.scheduletransfer;
 
 import br.com.scheduletransfer.domain.Transfer;
 import br.com.scheduletransfer.dto.CreateTransferRequest;

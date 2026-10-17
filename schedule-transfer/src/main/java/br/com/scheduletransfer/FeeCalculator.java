@@ -1,4 +1,4 @@
-package br.com.scheduletransfer.service;
+package br.com.scheduletransfer;
 
 import org.springframework.stereotype.Component;
 import java.math.BigDecimal;
