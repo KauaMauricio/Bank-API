@@ -1,0 +1,164 @@
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-icon">S</div>
+      <div>
+        <h1>Schedule</h1>
+        <span>TRANSFER</span>
+      </div>
+    </div>
+
+    <p class="menu-label">MENU PRINCIPAL</p>
+
+    <a class="menu-item active" href="#">
+      <span>▦</span> Visão geral
+    </a>
+
+    <a class="menu-item" href="#transferencias">
+      <span>↔</span> Transferências
+    </a>
+
+    <div class="sidebar-bottom">
+      <div class="api-status">
+        <span class="status-dot"></span>
+        API de transferências
+        <small>Spring Boot</small>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <div>
+        <span class="eyebrow">ÁREA FINANCEIRA</span>
+        <h2>Visão geral</h2>
+      </div>
+
+      <div class="profile">
+        <div class="avatar">A</div>
+        <div>
+          <strong>Administrador</strong>
+          <small>Schedule Transfer</small>
+        </div>
+      </div>
+    </header>
+
+    <section class="welcome">
+      <div>
+        <span class="eyebrow">SEU PAINEL DE CONTROLE</span>
+        <h2>Olá! 👋</h2>
+        <p>Acompanhe e gerencie suas transferências agendadas.</p>
+      </div>
+
+      <button class="btn btn-primary" (click)="loadTransfers()">
+        ↻ Atualizar dados
+      </button>
+    </section>
+
+    <section class="stats-grid">
+      <article class="stat-card">
+        <div class="stat-heading">
+          <span>Total de transferências</span>
+          <span class="stat-icon blue">↔</span>
+        </div>
+        <strong class="stat-value">{{ transfers.length }}</strong>
+        <small>Registros encontrados na API</small>
+      </article>
+
+      <article class="stat-card">
+        <div class="stat-heading">
+          <span>Valor transferido</span>
+          <span class="stat-icon green">$</span>
+        </div>
+        <strong class="stat-value">
+          {{ getTotalAmount() | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}
+        </strong>
+        <small>Soma dos valores das transferências</small>
+      </article>
+
+      <article class="stat-card">
+        <div class="stat-heading">
+          <span>Taxas calculadas</span>
+          <span class="stat-icon orange">%</span>
+        </div>
+        <strong class="stat-value">
+          {{ getTotalFees() | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}
+        </strong>
+        <small>Soma das taxas retornadas pela API</small>
+      </article>
+    </section>
+
+    <section class="mb-4">
+      <app-transfer-form
+        (transferCreated)="onTransferCreated()">
+      </app-transfer-form>
+    </section>
+
+    <section class="table-card" id="transferencias">
+      <div class="table-heading">
+        <div>
+          <h3>Transferências recentes</h3>
+          <p>Dados carregados diretamente do back-end.</p>
+        </div>
+        <span class="record-count">{{ transfers.length }} registros</span>
+      </div>
+
+      <div *ngIf="loading" class="feedback">
+        Carregando transferências...
+      </div>
+
+      <div *ngIf="errorMessage" class="alert alert-danger m-3">
+        {{ errorMessage }}
+      </div>
+
+      <div class="table-responsive" *ngIf="!loading && !errorMessage">
+        <table class="table align-middle mb-0">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Origem</th>
+            <th>Destino</th>
+            <th>Valor</th>
+            <th>Taxa</th>
+            <th>Agendamento</th>
+            <th>Status</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          <tr *ngFor="let transfer of transfers">
+            <td class="id-cell">#{{ transfer.id }}</td>
+            <td>{{ transfer.sourceAccount }}</td>
+            <td>{{ transfer.destinationAccount }}</td>
+            <td class="money-cell">
+              {{ transfer.amount | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}
+            </td>
+            <td>
+              {{ transfer.fee | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}
+            </td>
+            <td>{{ transfer.scheduledDate | date:'dd/MM/yyyy' }}</td>
+            <td>
+                <span class="status-badge"
+                      [class.cancelled]="transfer.status === 'CANCELLED'"
+                      [class.scheduled]="transfer.status === 'SCHEDULED'">
+                  {{ transfer.status }}
+                </span>
+            </td>
+          </tr>
+
+          <tr *ngIf="transfers.length === 0">
+            <td colspan="7" class="empty-state">
+              Nenhuma transferência encontrada.
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="footer">
+      Schedule Transfer · Painel de agendamento de transferências
+    </footer>
+  </main>
+</div>
