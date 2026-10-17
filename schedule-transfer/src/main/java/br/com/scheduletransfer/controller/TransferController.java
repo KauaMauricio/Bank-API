@@ -2,7 +2,7 @@ package br.com.scheduletransfer.controller;
 
 import br.com.scheduletransfer.dto.CreateTransferRequest;
 import br.com.scheduletransfer.dto.TransferResponse;
-import br.com.scheduletransfer.TransferService;
+import br.com.scheduletransfer.service.TransferService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

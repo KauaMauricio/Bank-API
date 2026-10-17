@@ -3,8 +3,6 @@ package br.com.scheduletransfer.service;
 import br.com.scheduletransfer.domain.Transfer;
 import br.com.scheduletransfer.dto.CreateTransferRequest;
 import br.com.scheduletransfer.repository.TransferRepository;
-import br.com.scheduletransfer.FeeCalculator;
-import br.com.scheduletransfer.TransferService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
