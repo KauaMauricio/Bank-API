@@ -3,7 +3,7 @@ Rest API desenvolvido com SpringBoot + Angular
 
 # 💸 Schedule Transfer
 
-Sistema web para **agendamento e gerenciamento de transferências financeiras**, desenvolvido como projeto acadêmico para praticar desenvolvimento Full Stack.
+Sistema web para **agendamento e gerenciamento de transferências financeiras**, desenvolvido para praticar meus conhecimentos de desenvolvimento Full Stack.
 
 ## 🚀 Tecnologias
 
@@ -60,4 +60,4 @@ Projeto desenvolvido para aprimorar conhecimentos em **Java, Spring Boot, Angula
 <img width="1900" height="961" alt="image" src="https://github.com/user-attachments/assets/c64d4daa-c784-4a25-8230-406020751779" />
 
 
-Desenvolvido para fins educacionais 💻
+Desenvolvido para fins educacionais/pessoais 💻
