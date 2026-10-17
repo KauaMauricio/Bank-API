@@ -57,7 +57,7 @@ Projeto desenvolvido para aprimorar conhecimentos em **Java, Spring Boot, Angula
 
 ---
 Tela principal:
-<img width="1059" height="1142" alt="image" src="https://github.com/user-attachments/assets/9947da3f-c109-4404-b67f-e16e162e3968" />
+<img width="800" height="1000" alt="image" src="https://github.com/user-attachments/assets/9947da3f-c109-4404-b67f-e16e162e3968" />
 
 
 
