@@ -56,7 +56,7 @@ Aplicação disponível em: `http://localhost:4200`
 Projeto desenvolvido para aprimorar conhecimentos em **Java, Spring Boot, Angular, APIs REST e integração entre frontend e backend**.
 
 ---
-
+Tela principal:
 <img width="1900" height="961" alt="image" src="https://github.com/user-attachments/assets/c64d4daa-c784-4a25-8230-406020751779" />
 
 
